@@ -8,19 +8,15 @@
         .error {
             border: 2px solid red;
             outline: none;
-            /* Убираем стандартное выделение при
-фокусе */
+            /* Убираем стандартное выделение при фокусе */
         }
-
         /* Анимация для появления */
         .animate_animated {
             animation-duration: 1s;
             /* Продолжительность анимации */
             animation-fill-mode: both;
-            /* Держать финальное
-состояние анимации */
+            /* Держать финальное состояние анимации */
         }
-
         .animate_fadeInLeftBig {
             @keyframes fadeInLeftBig {
                 0% {
@@ -33,20 +29,16 @@
                     transform: translateX(0);
                 }
             }
-
             animation-name: fadeInLeftBig;
         }
     </style>
 </head>
 
 <body>
-    <input id="from" type="text">
-    В инпуте написано: <span></span>
+    <input id="from" type="text">В инпуте написано: <span></span>
     <br>
     <button class="messageBtn">Показать блок</button>
-    <div class="message">
-        Привет :)
-    </div>
+    <div class="message">Привет :)</div>
     <br>
     <form>
         <label>
@@ -67,6 +59,29 @@
         <br>
         <button type="submit">Отправить</button>
     </form>
+
+    <script>
+
+        // Задание 1
+        let inputEl = document.querySelector('#from');
+        let spanEl = document.querySelector('span');
+        inputEl.addEventListener('input', () => {
+            spanEl.textContent = inputEl.value;
+        });
+
+        // Задание 2
+        let messageBtnEl = document.querySelector('.messageBtn');
+        let messageEl = document.querySelector('.message');
+        messageBtnEl.addEventListener('click', () => {
+            messageEl.classList.add('animate_animated');
+            messageEl.classList.add('animate_fadeInLeftBig');
+            messageEl.style.visibility = 'visible';
+        });
+
+        // Задание 3
+        
+
+    </script>
 </body>
 
 </html>

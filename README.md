@@ -14,19 +14,15 @@ DOM.
         .error {
             border: 2px solid red;
             outline: none;
-            /* Убираем стандартное выделение при
-фокусе */
+            /* Убираем стандартное выделение при фокусе */
         }
-
         /* Анимация для появления */
         .animate_animated {
             animation-duration: 1s;
             /* Продолжительность анимации */
             animation-fill-mode: both;
-            /* Держать финальное
-состояние анимации */
+            /* Держать финальное состояние анимации */
         }
-
         .animate_fadeInLeftBig {
             @keyframes fadeInLeftBig {
                 0% {
@@ -39,20 +35,16 @@ DOM.
                     transform: translateX(0);
                 }
             }
-
             animation-name: fadeInLeftBig;
         }
     </style>
 </head>
 
 <body>
-    <input id="from" type="text">
-    В инпуте написано: <span></span>
+    <input id="from" type="text">В инпуте написано: <span></span>
     <br>
     <button class="messageBtn">Показать блок</button>
-    <div class="message">
-        Привет :)
-    </div>
+    <div class="message">Привет :)</div>
     <br>
     <form>
         <label>
