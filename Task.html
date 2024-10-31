@@ -10,6 +10,7 @@
             outline: none;
             /* Убираем стандартное выделение при фокусе */
         }
+
         /* Анимация для появления */
         .animate_animated {
             animation-duration: 1s;
@@ -17,6 +18,7 @@
             animation-fill-mode: both;
             /* Держать финальное состояние анимации */
         }
+
         .animate_fadeInLeftBig {
             @keyframes fadeInLeftBig {
                 0% {
@@ -29,6 +31,7 @@
                     transform: translateX(0);
                 }
             }
+
             animation-name: fadeInLeftBig;
         }
     </style>
@@ -79,8 +82,30 @@
         });
 
         // Задание 3
-        
+        let formEl = document.querySelector('form');
+        let formInputEl = formEl.querySelector('input');
+        let formSelectEl = formEl.querySelector('select');
 
+        formEl.addEventListener('submit', (e) => {
+            if (formInputEl.value === '') {
+                formInputEl.classList.add('error');
+                e.preventDefault();
+            }
+            if (formSelectEl.value === '') {
+                formSelectEl.classList.add('error');
+                e.preventDefault();
+            }
+        });
+
+        // Задание 4
+        formInputEl.addEventListener('input', () => {
+            if (formInputEl.value) {
+                formInputEl.classList.remove('error');
+            } else {
+                formInputEl.classList.add('error');
+            }
+        });
+        
     </script>
 </body>
 
